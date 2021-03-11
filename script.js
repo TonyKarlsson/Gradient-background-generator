@@ -7,7 +7,7 @@ let allDirections = document.querySelectorAll(".arrow, .radial")
 let colorPickers = document.getElementById("color-pickers");
 
 //  Paint background and print CSS code
-function paintBackground(direction = "bottom") {
+const paintBackground = (direction = "bottom") => {
   if (direction === "radial") {
     body.style.background = "radial-gradient(" + readColorPicker() + ")";
   } else {
@@ -17,7 +17,7 @@ function paintBackground(direction = "bottom") {
 }
 
 // Read colorPickers and return to paintBackground
-function readColorPicker() {
+const readColorPicker = () => {
   let colors = "";
   for (let n = 0; n < colorPickers.childElementCount; n++) {
     colors += colorPickers.children[n].value + ", ";
@@ -26,7 +26,7 @@ function readColorPicker() {
 }
 
 // Adds colorpicker when user clicks plus
-function addColorPicker() {
+const addColorPicker = () => {
   let lastColorPicker = colorPickers.lastElementChild.cloneNode(true);
   colorPickers.appendChild(lastColorPicker);
   lastColorPicker.addEventListener("input", paintBackground);
