@@ -56,6 +56,6 @@ h4 {
     margin-block-end: 0.3em;
 }
 
-.active, .plus:hover {
+.active, .plus:hover, .random:hover {
   color: #8ce5f7;
 }
